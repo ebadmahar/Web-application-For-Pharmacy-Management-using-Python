@@ -15,8 +15,8 @@ A web application for managing a pharmacy and doctor's office. This application 
 1. **Clone the Repository:**
 
     ```sh
-    git clone /
-    cd Pharmacy Program
+    git clone https://github.com/ebadmahar/Web-application-For-Pharmacy-Management-using-Python.git
+    cd Web-application-For-Pharmacy-Management-using-Python
     ```
 
 2. **Create a Virtual Environment:**
