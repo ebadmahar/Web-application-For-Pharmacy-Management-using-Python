@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!--<header>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></a>
+    </header>--> <!--Add Your Logo Here -->
+    <main>
+        <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        <h2>Admin Panel</h2>
+        <h2>Add Medicine</h2>
+        <form action="{{ url_for('admin') }}" method="post" class="form">
+            <input type="text" name="name" placeholder="Medicine Name" class="input-field" required>
+            <input type="number" name="quantity" placeholder="Quantity" class="input-field" required>
+            <input type="number" step="0.01" name="price" placeholder="Price" class="input-field" required>
+            <input type="date" name="expiry_date" class="input-field" required>
+            <button type="submit" class="button">Add Medicine</button>
+        </form>
+        
+        <h2>Search Medicines</h2>
+        <form action="{{ url_for('admin') }}" method="get" class="form">
+            <input type="text" name="search" placeholder="Search Medicine" value="{{ request.args.get('search', '') }}" class="input-field">
+            <button type="submit" class="button">Search</button>
+        </form>
+
+        <h2>Medicines</h2>
+        <div class="medicine-list">
+            {% for med in medicines %}
+                <div class="medicine-box">
+                    <p><strong>Name:</strong> {{ med['name'] }}</p>
+                    <p><strong>Quantity:</strong> {{ med['quantity'] }}</p>
+                    <p><strong>Price:</strong> {{ med['price'] }}</p>
+                    <p><strong>Expiry Date:</strong> {{ med['expiry_date'] }}</p>
+                    <form action="{{ url_for('admin') }}" method="post" class="delete-form">
+                        <input type="hidden" name="delete" value="{{ med['name'] }}">
+                        <button type="submit" class="button delete-button">Delete</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <footer class="footer">
+            <a href="https://github.com/ebadmahar">Made By Ebad Mahar</a>
+        </footer>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!--<header>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></a>
+    
+    </header>--> <!--Add Your Logo Here -->
+    <main>
+        <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        <h2>Operator Panel</h2>
+        <h2>Update Medicine Quantity</h2>
+        <form action="{{ url_for('operator') }}" method="post">
+            <input type="text" name="name" placeholder="Medicine Name" class="input-field" required>
+            <input type="number" name="quantity" placeholder="New Quantity" class="input-field" required>
+            <button type="submit" class="button">Update Quantity</button>
+        </form>
+        <h2>Medicines</h2>
+        <div class="medicine-list">
+            {% for medicine in medicines %}
+                <div class="medicine-box">
+                    <p>Name: {{ medicine.name }}</p>
+                    <p>Quantity: {{ medicine.quantity }}</p>
+                    <p>Price: {{ medicine.price }}</p>
+                    <p>Expiry Date: {{ medicine.expiry_date }}</p>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/ebadmahar">Made By Ebad Mahar</a>
+    </footer>
+    </main>
+    
+</body>
+</html>

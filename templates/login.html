@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <title>Pharmacy Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+   <!-- <header>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"></a>
+    </header>--> <!--Add Your Logo Here -->
+    <main class="login-main">
+        {% if error %}
+            <video class="error-video" width="320" height="240" controls autoplay>
+                <source src="{{ url_for('static', filename='wrong.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        {% endif %}
+        <form action="{{ url_for('login') }}" method="post" class="login-form">
+            <input type="text" name="username" placeholder="Username" class="input-field" required>
+            <input type="password" name="password" placeholder="Password" class="input-field" required>
+            <button type="submit" class="button">Login</button>
+        </form>
+    </main>
+</div>
+<footer class="footer">
+    <a href="https://github.com/ebadmahar">Made Ebad Mahar</a>
+</footer>
+</body>
+</html>
