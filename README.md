@@ -77,8 +77,8 @@ python app.py
 **You can change the default credentials and configure the application according to your needs. Replace or update the images and other static files as necessary.**
 
 ## Images
-![Home](static/images/Home.png)
-![Login Screen](static/images/login.png)
-![Warning Video](static/images/Wrong.png)
-![Admin Panel](static/images/adminpanel.png)
-![Operator Panel](static/images/operatorpanel.png)
+![Home](images/Home.png)
+![Login Screen](images/login.png)
+![Warning Video](images/Wrong.png)
+![Admin Panel](images/adminpanel.png)
+![Operator Panel](images/operatorpanel.png)
